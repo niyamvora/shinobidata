@@ -1,13 +1,13 @@
 name: 🐛 Bug report
-description: Something's not working — OAuth, a tool's response, the consent screen, etc.
+description: OAuth, a tool's response, the consent screen, anything broken.
 labels: ["bug", "needs-triage"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for reporting. The fields below are what we actually use to reproduce — please fill in what you can.
+        Thanks for reporting. The fields below are what we actually use to reproduce. Fill in what you can.
 
-        For installation / "how do I" questions, use [Discussions → Q&A](https://github.com/niyamvora/shinobidata/discussions/categories/q-a) instead.
+        For install / "how do I" questions, use [Discussions → Q&A](https://github.com/niyamvora/shinobidata/discussions/categories/q-a).
 
   - type: dropdown
     id: client
@@ -27,14 +27,14 @@ body:
     id: client-version
     attributes:
       label: AI client version
-      description: e.g. Claude Desktop 0.10.x, ChatGPT (latest), or a release date.
+      description: Claude Desktop 0.10.x, ChatGPT (latest), or a release date.
       placeholder: "Claude Desktop 0.10.5"
 
   - type: textarea
     id: prompt
     attributes:
       label: What you asked the AI
-      description: Paste the actual prompt. If it's part of a longer conversation, just the prompt that triggered the bug is enough.
+      description: The actual prompt. If it's part of a longer conversation, just the one that triggered the bug.
       placeholder: '"Show me my portfolio overview for portfolio 2"'
       render: text
     validations:
@@ -51,7 +51,7 @@ body:
     id: expected
     attributes:
       label: What you expected
-      description: Briefly — what was the right answer?
+      description: Briefly. What was the right answer?
     validations:
       required: true
 
@@ -59,7 +59,7 @@ body:
     id: actual
     attributes:
       label: What you got
-      description: The wrong answer, error message, hung request, etc. Paste verbatim if possible.
+      description: Wrong answer, error message, hung request. Paste verbatim if possible.
       render: text
     validations:
       required: true
@@ -67,18 +67,18 @@ body:
   - type: textarea
     id: logs
     attributes:
-      label: Logs (if available)
+      label: Logs (if you have them)
       description: |
-        For OAuth issues, the contents of `~/.mcp-auth/` (with `access_token` and `refresh_token` redacted) help a lot.
-        For Claude Desktop, check Console.app for entries from "Claude Helper".
+        For OAuth issues, contents of `~/.mcp-auth/` (with `access_token` / `refresh_token` redacted) help a lot.
+        For Claude Desktop, Console.app entries from "Claude Helper".
       render: text
 
   - type: checkboxes
     id: search-confirm
     attributes:
-      label: Confirmation
+      label: Confirm
       options:
-        - label: I searched [Issues](https://github.com/niyamvora/shinobidata/issues?q=is%3Aissue) and [Discussions](https://github.com/niyamvora/shinobidata/discussions) and didn't find a duplicate.
+        - label: Searched [Issues](https://github.com/niyamvora/shinobidata/issues?q=is%3Aissue) and [Discussions](https://github.com/niyamvora/shinobidata/discussions); not a duplicate.
           required: true
-        - label: I redacted any secrets (OAuth tokens, API keys) from the fields above.
+        - label: Redacted any secrets (OAuth tokens, API keys) from the fields above.
           required: true

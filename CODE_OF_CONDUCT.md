@@ -1,22 +1,22 @@
 # Code of Conduct
 
-This project follows version 2.1 of the [Contributor Covenant](https://www.contributor-covenant.org/version/2/1/code_of_conduct/).
+This project follows the [Contributor Covenant v2.1](https://www.contributor-covenant.org/version/2/1/code_of_conduct/).
 
-## Summary
+## Short version
 
-- Be welcoming, kind, and patient.
-- Disagreements on technical decisions happen and are healthy. Disrespect, harassment, doxxing, or personal attacks are not.
-- Default to charitable interpretations of others' messages.
-- If something feels off, flag it. We'd rather hear from you early.
+- Be welcoming, kind, patient.
+- Technical disagreements are healthy. Disrespect, harassment, doxxing, personal attacks are not.
+- Read others charitably. Most heated threads are misunderstandings.
+- If something feels off, flag it early.
 
 ## Reporting
 
-Email [support@shinobidata.com](mailto:support@shinobidata.com) — subject line `Code of Conduct: <short summary>`. Reports are read by the maintainer and treated confidentially.
+Email <support@shinobidata.com> with subject `Code of Conduct: <short summary>`. Maintainer reads. Treated confidentially.
 
 ## Enforcement
 
-The maintainer may, at their discretion: remove comments, edit posts, close issues / PRs, or ban contributors who repeatedly violate the standards above. Egregious one-off violations (harassment, threats, doxxing) result in immediate removal.
+Maintainer may, at their discretion, remove comments, edit posts, close issues or PRs, or ban contributors who repeatedly violate the standards. Egregious one-off violations (harassment, threats, doxxing) get immediate removal.
 
 ## Scope
 
-Applies to all project spaces — issues, PRs, discussions, and any official communication channels.
+All project spaces: issues, PRs, discussions, and any official channels.

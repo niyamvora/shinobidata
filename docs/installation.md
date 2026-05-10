@@ -1,22 +1,18 @@
 # Installation
 
-3 paths: Claude Desktop, ChatGPT (Plus / Teams / Enterprise), and any other MCP-compatible client.
-
-The connector URL is the same in all cases:
+Three paths: Claude Desktop, ChatGPT, and anything else that speaks MCP. The connector URL is the same in all cases:
 
 ```
 https://mcp.shinobidata.com/api/mcp/mcp
 ```
 
----
-
 ## Claude Desktop
 
-1. Open Claude Desktop's config file:
+1. Open the config file.
    - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
    - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
 
-2. Add the `shinobidata` entry under `mcpServers`. If the file is empty, paste this whole thing:
+2. Add the `shinobidata` block under `mcpServers`. If the file is empty, paste the whole thing:
 
    ```json
    {
@@ -29,84 +25,72 @@ https://mcp.shinobidata.com/api/mcp/mcp
    }
    ```
 
-   If you already have other MCP servers configured, just add the `shinobidata` key inside `mcpServers`.
+   If you already have other MCPs, just add the `shinobidata` key alongside them.
 
-3. Save the file.
+3. Save.
 
-4. **Cmd-Q** to fully quit Claude Desktop (not just close the window — quit the process).
+4. Quit Claude Desktop fully. On macOS that's Cmd-Q, not closing the window. MCPs are loaded at app start.
 
-5. Reopen Claude Desktop.
-
-6. The first tool call triggers the OAuth dance:
-   - Browser opens to `https://mcp.shinobidata.com/oauth/authorize`
+5. Reopen Claude. The first tool call kicks off the OAuth flow:
+   - Browser opens to the consent screen
    - Sign in with Google
-   - Click **Allow** on the consent screen
-   - Browser closes; you're back in Claude
+   - Click Allow
+   - Browser closes, you're back in Claude
 
-7. Try a quick prompt: *"List my MCP tools."* You should see all 32 tools across the 5 groups.
+6. Try `list my MCP tools`. You should see all 32 across the five groups.
 
-### Resetting the OAuth flow
+### Resetting OAuth
 
-If something goes wrong during auth and you need to start over:
+If something goes weird mid-flow:
 
 ```bash
 rm -rf ~/.mcp-auth/
 ```
 
-Then Cmd-Q + reopen Claude. Next tool call re-triggers the dance.
-
----
+Cmd-Q Claude, reopen, the next tool call starts fresh.
 
 ## claude.ai (web)
 
-Currently MCP support in `claude.ai` (the web app) is rolling out behind the connectors UI. Once it's available in your account:
+The web app is rolling out connector support behind a feature flag. When you have access:
 
 1. Click the connector icon in the chat composer.
-2. Choose **Add custom connector** (or similar — the exact label changes).
+2. "Add custom connector" (the label varies).
 3. Paste `https://mcp.shinobidata.com/api/mcp/mcp`.
-4. Authorize via the OAuth dance.
+4. Authorize.
 
-If you don't see the connector option yet, this feature is still being gated. Use Claude Desktop (above) in the meantime — same backend, same tools.
-
----
+If the option isn't there yet, use Claude Desktop. Same backend, same tools, same data.
 
 ## ChatGPT (Plus / Teams / Enterprise)
 
-1. **Settings** → **Connectors** → **Add Custom**.
+1. Settings → Connectors → Add Custom.
 2. Paste the URL: `https://mcp.shinobidata.com/api/mcp/mcp`.
-3. ChatGPT will discover the OAuth flow via `/.well-known/oauth-authorization-server` automatically.
+3. ChatGPT auto-discovers OAuth from the well-known endpoint.
 4. Authorize when prompted.
 
-For **Deep Research mode**, the connector's `search` and `fetch` tools are picked up automatically once it's installed. Switch to Deep Research and ask a research-style prompt:
+For Deep Research mode, the `search` and `fetch` tools get picked up automatically once it's connected. Try:
 
-> *Pick a few US stocks with strong revenue growth and reasonable valuation. Use ShinobiData to research them.*
+> Pick a few US stocks with strong recent revenue growth and reasonable valuation. Use ShinobiData to research them.
 
-Expect 3–5 tool calls (`search` → `get_growth_stats` → `get_valuation_history` → `compare_companies` → `fetch`) returning a grounded, citation-rich answer.
+You'll see ChatGPT call `search` → `get_growth_stats` → `get_valuation_history` → `compare_companies` → `fetch` and stitch a real answer with citations.
 
----
+## Anything else
 
-## Any other MCP-compatible client
-
-If your client supports the **Streamable HTTP transport** + **OAuth 2.1 with PKCE** (most do), point it at the connector URL directly:
+If your client supports Streamable HTTP and OAuth 2.1 with PKCE (most do), point it at the connector URL directly:
 
 ```
 https://mcp.shinobidata.com/api/mcp/mcp
 ```
 
-The well-known metadata at `https://mcp.shinobidata.com/.well-known/oauth-authorization-server` covers everything the client needs to set up auth (endpoints, scopes, supported flows). The protocol-level handshake is standard MCP.
+The well-known endpoints at `https://mcp.shinobidata.com/.well-known/oauth-authorization-server` and `.../oauth-protected-resource` cover everything else (auth + token endpoints, scopes, supported flows).
 
-OAuth scopes you'll be asked to grant:
+Scopes you'll see at the consent screen:
 
-- `portfolio:read` — view your portfolios + holdings + transactions.
-- `portfolio:write` — create / edit / delete portfolios on your behalf.
-- `market:read` — read public market data (companies, fundamentals, returns) — no personal data involved.
+- `portfolio:read` — view your portfolios, holdings, transactions.
+- `portfolio:write` — create / edit / delete portfolios.
+- `market:read` — read public market data. No personal data.
 
-You can choose to grant only the scopes you need at the consent screen.
+Grant only what you want.
 
----
+## When something doesn't work
 
-## Common install issues
-
-See [`troubleshooting.md`](troubleshooting.md) for OAuth flow failures, "no tools showing", rate limit errors, and similar.
-
-If your specific issue isn't there, file a [bug report](https://github.com/niyamvora/shinobidata/issues/new?template=bug.yml) or post in [Discussions → Q&A](https://github.com/niyamvora/shinobidata/discussions/categories/q-a).
+See [troubleshooting.md](troubleshooting.md). If your specific issue isn't there, file a [bug](https://github.com/niyamvora/shinobidata/issues/new?template=bug.yml) or post in [Discussions → Q&A](https://github.com/niyamvora/shinobidata/discussions/categories/q-a).

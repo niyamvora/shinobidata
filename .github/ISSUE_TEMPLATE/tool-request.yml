@@ -1,19 +1,19 @@
 name: 💡 Tool request
-description: Propose a new MCP tool. Discuss the shape first in Discussions if you're not sure — then file here once it's clear.
+description: Propose a new MCP tool. Talk through the shape first in Discussions if you're not sure, then file here.
 labels: ["tool-request", "needs-triage"]
 body:
   - type: markdown
     attributes:
       value: |
-        Most tools that ship come from real questions someone tried to ask Claude/ChatGPT and couldn't answer. Tell us the question first, then we figure out the tool.
+        Most tools that ship come from a real question someone tried to ask Claude or ChatGPT and couldn't answer. Tell us the question first; we'll figure out the tool together.
 
-        For early-stage discussion, use [Discussions → Ideas](https://github.com/niyamvora/shinobidata/discussions/categories/ideas).
+        For early-stage discussion, [Discussions → Ideas](https://github.com/niyamvora/shinobidata/discussions/categories/ideas).
 
   - type: textarea
     id: question
     attributes:
       label: What user-facing question should this tool help answer?
-      description: Phrase it as a real question someone would ask Claude/ChatGPT. Don't propose the tool name yet — just the question.
+      description: Phrase it as a real question someone would ask. Don't propose the tool name yet, just the question.
       placeholder: |
         "Of my holdings, which ones have insider buying in the last quarter?"
         "What's the historical correlation between my portfolio and gold?"
@@ -23,8 +23,8 @@ body:
   - type: textarea
     id: data
     attributes:
-      label: What data sources would the tool need?
-      description: Rough is fine — "insider transactions", "options chain", "ETF holdings overlap" is enough.
+      label: Data sources it would need
+      description: Rough is fine. "Insider transactions", "options chain", "ETF holdings overlap" is enough.
     validations:
       required: true
 
@@ -37,7 +37,7 @@ body:
         - Multi-company (input is N tickers, capped at ~5-10)
         - Portfolio-level (input is a portfolio id)
         - Universe / sector / industry (no specific symbol)
-        - Discovery (cursor-paginated screen-style)
+        - Discovery (cursor-paginated, screen-style)
     validations:
       required: true
 
@@ -46,11 +46,10 @@ body:
     attributes:
       label: Response shape
       description: |
-        Per [§6.6 of the architecture doc](../docs/architecture.md#why-our-analytics-tools-dont-paginate),
-        analytics tools return constant-size summaries; listing tools cursor-paginate at 50/page.
+        See [why analytics tools don't paginate](../docs/architecture.md#why-analytics-tools-dont-paginate). Analytics tools return constant-size summaries; listing tools cursor-paginate at 50/page.
       options:
         - Constant-size summary (server aggregates, no row dump)
-        - Per-symbol detail (1 row per holding, sorted)
+        - Per-symbol detail (one row per holding, sorted)
         - Cursor-paginated list (50/page)
         - One-row detail (single ticker)
     validations:
@@ -60,16 +59,16 @@ body:
     id: example-response
     attributes:
       label: Example response (rough JSON sketch)
-      description: Optional but helpful. Don't worry about exact field names; we'll iterate.
+      description: Optional but helpful. Field names don't have to be final, we'll iterate.
       render: json
 
   - type: dropdown
     id: scope-needed
     attributes:
-      label: OAuth scope it would need
+      label: OAuth scope this would need
       options:
         - market:read (public market data only)
-        - portfolio:read (touches the user's portfolios but read-only)
+        - portfolio:read (reads user's portfolios)
         - portfolio:write (mutates portfolios)
     validations:
       required: true

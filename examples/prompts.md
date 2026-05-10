@@ -1,12 +1,12 @@
-# Demo prompts
+# Prompts
 
-A gallery of real prompts that exercise the full surface. Copy any of these into Claude Desktop or ChatGPT after [installing the connector](../docs/installation.md).
+Real prompts that exercise the full surface. Paste any into Claude Desktop or ChatGPT once you've [installed the connector](../docs/installation.md).
 
-Grouped by what the AI orchestrates underneath. Each prompt typically triggers 1–4 tool calls.
+Each one typically triggers 1-4 tool calls. Tools the AI calls are noted under each block.
 
----
+## Setup
 
-## Setup (run once)
+Run once.
 
 ```
 Create a portfolio called "Test Portfolio".
@@ -36,43 +36,35 @@ LUNR, 300, 8
 ACHR, 350, 7
 ```
 
-Tools the AI calls: `create_portfolio` → `parse_portfolio_text` → `add_holdings`.
+Tools: `create_portfolio`, `parse_portfolio_text`, `add_holdings`.
 
-> 20 holdings spanning mega/large/mid/small/micro across 9 sectors. Two intentional underwater positions (RIVN, OPEN) so the winners/losers tables show up clearly.
+20 holdings spanning mega/large/mid/small/micro across 9 sectors. Two intentional underwater positions (RIVN, OPEN) so the winners/losers tables show up clearly.
 
----
-
-## "How is my portfolio doing?"
+## How is my portfolio doing
 
 ```
 How is my portfolio doing? Give me the full overview.
 ```
 
-Tools: `get_portfolio_overview`. Returns market value, cost basis, unrealized P&L, sector / country / market-cap allocation, top 5 winners + top 5 losers by 1Y return.
+Tools: `get_portfolio_overview`. Market value, cost basis, unrealized P&L, sector / country / market-cap allocation, top 5 winners + 5 losers by 1Y return.
 
----
-
-## "Which holdings are growing fast vs stagnating?"
+## Growing vs stagnating
 
 ```
 Which of my holdings are growing fastest, and which are stagnating?
 ```
 
-Tools: `get_growth_vs_stagnant`. Returns bucket counts (`accelerating` / `growing` / `stable` / `stagnant` / `declining` / `noData`), top growers, top stagnators, weighted revenue + profit CAGRs.
+Tools: `get_growth_vs_stagnant`. Bucket counts, top growers, top stagnators, weighted revenue + profit CAGRs.
 
----
-
-## "Did my portfolio beat the S&P over the last year?"
+## Did I beat the S&P
 
 ```
 Did my portfolio beat the S&P 500 over the last year?
 ```
 
-Tools: `get_portfolio_performance` with period `1Y`. Returns total return, excess vs SPY + QQQ, latest vol/drawdown/Sharpe.
+Tools: `get_portfolio_performance` with period `1Y`. Total return, excess vs SPY + QQQ, latest vol / drawdown / Sharpe.
 
----
-
-## "What dividends am I getting?"
+## Dividends
 
 ```
 How much dividend income did I get over the past year, and what's coming up in the next 30 days?
@@ -80,42 +72,34 @@ How much dividend income did I get over the past year, and what's coming up in t
 
 Tools: `get_dividend_summary` (TTM income, top payers, current yield) + `get_dividend_calendar` (upcoming ex-dates).
 
----
-
-## "How risky is my portfolio?"
+## Risk and concentration
 
 ```
 How risky is my portfolio? Any concentration concerns?
 ```
 
-Tools: `get_risk_summary`. Returns weighted beta, vol, drawdown, Sharpe, top-N concentration weights, sector + holding HHI, and threshold flags (single-stock >15%, sector >40%).
+Tools: `get_risk_summary`. Weighted beta, vol, drawdown, Sharpe, top-N concentration weights, sector + holding HHI, threshold flags.
 
----
-
-## "Compare these 5 megacaps"
+## Compare 5 megacaps
 
 ```
 Compare AAPL, MSFT, NVDA, GOOGL, and META side by side.
 ```
 
-Tools: `compare_companies`. Returns valuation, profitability, growth, leverage, quality, beta, and recent returns for all 5.
+Tools: `compare_companies`. Valuation, profitability, growth, leverage, quality, beta, recent returns.
 
----
-
-## "Give me the lay of the market today"
+## Lay of the market
 
 ```
 What's the US market doing today?
 
 Then drill into the technology sector.
-Then drill into the semiconductors industry.
+Then into the semiconductors industry specifically.
 ```
 
 Tools: `get_market_overview` → `get_sector_overview` → `get_industry_overview`.
 
----
-
-## "What's coming up?"
+## What's coming up
 
 ```
 What earnings reports are coming up in the next 14 days?
@@ -125,55 +109,45 @@ Who are today's top movers?
 
 Tools: `get_earnings_calendar`, `get_dividend_calendar`, `get_top_movers`.
 
----
-
-## "Is X cheap vs its history?"
+## Cheap vs its history
 
 ```
 Is AAPL cheap or expensive vs its own 5- and 10-year history?
 ```
 
-Tools: `get_valuation_history`. Returns current P/E + P/S + EV/EBITDA TTM and their 5y / 10y percentile ranks.
+Tools: `get_valuation_history`. Current P/E + P/S + EV/EBITDA TTM, 5y / 10y percentile rank.
 
----
-
-## "How healthy are these companies fundamentally?"
+## Quality scores
 
 ```
 Get the quality scores for AAPL, NVDA, JPM, JNJ, MSFT.
 ```
 
-Tools: `get_quality_scores`. Returns Piotroski F + Altman Z + Beneish M + Magic Formula + Sloan-style cash score for each, with threshold interpretation.
+Tools: `get_quality_scores`. Piotroski F + Altman Z + Beneish M + Magic Formula + Sloan-style cash, with thresholds.
 
----
-
-## "What's the news on X?"
+## News on a name
 
 ```
 What's the news sentiment on NVDA right now?
 ```
 
-Tools: `get_news_sentiment`. Returns recent headlines + per-ticker sentiment scores.
+Tools: `get_news_sentiment`.
 
----
-
-## Single-company drilldown
+## Single-company drilldown (the cascade)
 
 ```
 Search for "data" companies.
-Then give me a snapshot of NVDA.
+Give me a snapshot of NVDA.
 Show NVDA's last 5 years of income statements.
 What are NVDA's growth stats across all horizons?
-Who are NVDA's peers in the same industry?
-What do analysts think about NVDA right now?
-Show me NVDA's price history from 2025-01-01 to 2025-06-01.
+Who are NVDA's peers?
+What do analysts think about NVDA?
+Show NVDA's price history from 2025-01-01 to 2025-06-01.
 ```
 
-Tools: the full `search_companies` → `get_company_snapshot` → `get_financials` → `get_growth_stats` → `get_peers` → `get_analyst_view` → `get_price_history` cascade.
+Tools: `search_companies` → `get_company_snapshot` → `get_financials` → `get_growth_stats` → `get_peers` → `get_analyst_view` → `get_price_history`.
 
----
-
-## Discovery (screen the universe)
+## Screen the universe
 
 ```
 Screen for technology stocks with P/E < 30 and Piotroski F-score >= 7. Sort by 5Y sales CAGR descending.
@@ -181,19 +155,15 @@ Screen for technology stocks with P/E < 30 and Piotroski F-score >= 7. Sort by 5
 
 Tools: `screen` with the DSL filter.
 
----
+## ChatGPT Deep Research
 
-## ChatGPT Deep Research mode
-
-In ChatGPT, switch to **Deep Research** and try:
+In ChatGPT, switch to Deep Research and try:
 
 ```
 Pick a few US stocks with strong recent revenue growth and reasonable valuation. Use ShinobiData to research them. Look at fundamentals, valuation history, peers, and analyst views. Give me a recommendation.
 ```
 
-ChatGPT will orchestrate `search` → `get_growth_stats` → `get_valuation_history` → `compare_companies` → `fetch` to compose a grounded, citation-rich answer.
-
----
+ChatGPT will orchestrate `search` → `get_growth_stats` → `get_valuation_history` → `compare_companies` → `fetch` and stitch a real answer with citations.
 
 ## Mutations
 
@@ -203,19 +173,17 @@ Add a transaction: I bought 10 more NVDA at $130 today.
 Delete my OPEN position. (Yes, confirm.)
 ```
 
-Tools: `update_holding`, `add_transaction`, `delete_holding`. Note `delete_holding` requires explicit `confirm: true`.
+Tools: `update_holding`, `add_transaction`, `delete_holding`. `delete_holding` requires `confirm: true`.
 
----
-
-## Edge-case tests
+## Edge cases
 
 These exercise the validation layer:
 
 ```
-Compare AAPL, MSFT, NVDA, GOOGL, META, AMZN.    # 6 symbols → rejected (cap 5)
-Show me NVDA's price history from 2023-01-01 to 2026-01-01.    # 1095 days → rejected (cap 730)
-Delete my AAPL position.    # missing confirm: true → refused
-Get my portfolio without authorizing first.    # 401 with WWW-Authenticate
+Compare AAPL, MSFT, NVDA, GOOGL, META, AMZN.   # 6 symbols, gets rejected (cap is 5)
+Show NVDA's price history from 2023-01-01 to 2026-01-01.   # 1095 days, rejected (cap is 730)
+Delete my AAPL position.   # missing confirm: true, refused
+Get my portfolio without authorizing first.   # 401 with WWW-Authenticate
 ```
 
 Each returns a structured error explaining what's wrong.

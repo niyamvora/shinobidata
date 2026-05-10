@@ -1,44 +1,40 @@
-<div align="center">
+# ShinobiData
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/logo-dark.svg">
-  <img src="assets/logo-light.svg" alt="ShinobiData" width="120" />
+  <img src="assets/logo-light.svg" alt="ShinobiData" width="96" align="right" />
 </picture>
 
-# ShinobiData
+AIクライアントを本格的なポートフォリオアナリストに繋ぎます。ポートフォリオ管理、ベンチマーク比較、ファンダメンタルズ、セクター・市場分析、スクリーニング、ニュースをカバーする32ツール。米国株、OAuth、無料。
 
-**ポートフォリオ分析 + 米国株 360°リサーチを、あなたのAIクライアントで。**
-
-OAuthで保護された32ツール。Claude、ChatGPT、その他のMCP対応クライアントで動作します。
+Claude Desktop、ChatGPT (Plus / Teams / Enterprise)、その他のMCPクライアントで動作。
 
 [![MCP Registry](https://img.shields.io/badge/MCP_Registry-com.shinobidata%2Fresearch-blue)](https://registry.modelcontextprotocol.io/?search=shinobidata)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-🌐  [English](README.md)  ·  **日本語**  ·  [한국어](README.ko.md)  ·  [Tiếng Việt](README.vi.md)
+[English](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Tiếng Việt](README.vi.md)
 
-</div>
-
-> [!note]
-> **翻訳について。** このページは英語版（[README.md](README.md)）が正本です。日本語訳に誤りや不自然な表現があればプルリクエストを歓迎します。専門用語（OAuth、MCP、PKCEなど）は英語のまま保持しています。
+> 翻訳ノート: 英語版 ([README.md](README.md)) が正本です。誤訳や不自然な表現があれば PR を歓迎します。技術用語 (OAuth、MCP、PKCE等) は英語のままです。
 
 ---
 
-## ShinobiDataとは
+## こんなことが聞けます
 
-**Model Context Protocol (MCP)** サーバーで、AIクライアントをポートフォリオ分析者・米国株リサーチアシスタントに変えます。一度接続すれば、こんな質問ができます：
+AIがツールを連携させ、あなたは質問するだけ。
 
-- *「テクノロジーセクターの集中度は？」*
-- *「過去1年でS&P 500を上回ったか？」*
-- *「AAPL、MSFT、NVDA、GOOGL、METAをバリュエーション・成長性・品質で比較」*
-- *「AAPLは過去10年の自分自身と比べて割安か割高か？」*
+- 「テクノロジーの集中度はどれくらい?」
+- 「今年S&P 500を上回った?」
+- 「AAPL、MSFT、NVDA、GOOGL、METAを比較して」
+- 「AAPLは過去10年と比較して割安?」
+- 「次の14日間に発表予定の決算は?」
 
-AIがツールを連携させ、結果をナレートし、データを引用します。スプレッドシートからのコピペは不要、別のダッシュボードも不要。
+各質問が1〜4回のツール呼び出しに変換されます。AIが結果をナレートし、データには出典がつきます。
 
-## クイックインストール
+## インストール
 
 ### Claude Desktop
 
-`~/Library/Application Support/Claude/claude_desktop_config.json` に追加：
+`~/Library/Application Support/Claude/claude_desktop_config.json` を編集:
 
 ```json
 {
@@ -51,60 +47,54 @@ AIがツールを連携させ、結果をナレートし、データを引用し
 }
 ```
 
-Claude Desktopを再起動すると、OAuth同意画面が表示されます。Googleでサインインすれば完了。
+Claudeを完全終了 (Cmd-Q、ウィンドウ閉じるだけではNG)。再起動。OAuth画面が一度だけ表示されるのでGoogleでサインイン。完了。
 
-### ChatGPT (Plus / Teams / Enterprise)
+### ChatGPT
 
-設定 → **コネクタ** → **カスタム追加** → `https://mcp.shinobidata.com/api/mcp/mcp` を貼り付け → 認証。
+設定 → コネクタ → カスタム追加 → `https://mcp.shinobidata.com/api/mcp/mcp` を貼り付け → 認証。
 
-ディープリサーチモードでは、コネクタの `search` + `fetch` ツールが自動的に使用されます。
+Deep Researchモードでは `search` と `fetch` が自動で使われます。
 
-### その他のMCP対応クライアント
+### その他
 
-コネクタURL `https://mcp.shinobidata.com/api/mcp/mcp` を直接指定。Streamable HTTP transport、OAuth 2.1 with PKCE。
+Streamable HTTP、OAuth 2.1 with PKCE。`https://mcp.shinobidata.com/api/mcp/mcp` を指定すれば、well-knownエンドポイントから自動設定されます。
 
-詳しいインストール手順は [`docs/installation.md`](docs/installation.md) を参照（英語）。
+詳細は [docs/installation.md](docs/installation.md) (英語)、トラブルシュートは [docs/troubleshooting.md](docs/troubleshooting.md) (英語)。
 
----
+## 中身
 
-## 32ツール、5つのグループ
+32ツール、5つのグループ。
 
-| グループ | 数 | スコープ |
+| グループ | ツール数 | スコープ |
 |---|---:|---|
-| **ポートフォリオCRUD** | 6 | `portfolio:write` |
-| **ポートフォリオ分析** | 6 | `portfolio:read` |
-| **個別企業リサーチ** | 7 | `market:read` |
-| **360°マーケット & セクター** | 10 | `market:read` |
-| **ディスカバリー** | 3 | `market:read` |
+| ポートフォリオCRUD | 6 | `portfolio:write` |
+| ポートフォリオ分析 | 6 | `portfolio:read` |
+| 個別企業リサーチ | 7 | `market:read` |
+| マーケット & セクター | 10 | `market:read` |
+| 探索 (`screen`、`search`、`fetch`) | 3 | `market:read` |
 
-詳細は [`docs/tools.md`](docs/tools.md)（英語）。
+同意画面で必要なスコープだけ許可できます。リサーチだけに使ってポートフォリオ操作は許可しないなら `portfolio:write` をスキップ。
 
----
+カタログ全体: [docs/tools.md](docs/tools.md) (英語)。
 
-## プライバシー & セキュリティ
+## プライバシーとセキュリティ
 
-- **OAuthトークン** はSHA-256でハッシュ化して保存。プレーンテキストでは保存しません。
-- **リフレッシュトークンのローテーション** RFC 6749 §10.4準拠。
-- **PKCE S256必須**、`plain` はOAuth 2.1に従い拒否。
-- **監査ログ** はセキュリティ監視のため90日間保持。引数からシークレットは除去済み。
+- OAuthトークンはSHA-256でハッシュ化して保存。リフレッシュトークンはローテーション。
+- 認可コードは単回使用、TTL 10分。
+- PKCE S256必須、`plain` はOAuth 2.1に従い拒否。
+- 監査ログは90日保持、引数からシークレットは除去。
+- トークン単位のレート制限あり。
 
-プライバシーポリシー全文：<https://shinobidata.com/ja/legal/privacy-policy>
-利用規約全文：<https://shinobidata.com/ja/legal/terms>
+詳細: <https://shinobidata.com/en/legal/privacy-policy> · <https://shinobidata.com/en/legal/terms>
 
----
+## ヘルプ・コントリビュート
 
-## コミュニティ
+バグ: [バグレポート](https://github.com/niyamvora/shinobidata/issues/new?template=bug.yml)
+ツールアイデア: [Discussions → Ideas](https://github.com/niyamvora/shinobidata/discussions/categories/ideas)
+質問: [Discussions → Q&A](https://github.com/niyamvora/shinobidata/discussions/categories/q-a) または <support@shinobidata.com>
 
-- 🐛 **バグ？** [Issue を作成](https://github.com/niyamvora/shinobidata/issues/new/choose)
-- 💡 **ツールリクエスト？** [Discussions → Ideas](https://github.com/niyamvora/shinobidata/discussions/categories/ideas)
-- 📬 **メール**: [support@shinobidata.com](mailto:support@shinobidata.com)
-
-コントリビューション歓迎 — [`CONTRIBUTING.md`](CONTRIBUTING.md)（英語）参照。
-
----
+翻訳・ドキュメント修正歓迎。詳細は [CONTRIBUTING.md](CONTRIBUTING.md) (英語)。
 
 ## ライセンス
 
-このドキュメント / 例 / アセットリポジトリのすべてに対してMIT — [`LICENSE`](LICENSE) 参照。
-
-MCPサーバー本体は `https://mcp.shinobidata.com` でホストされたサービスとして動作します。本番コードベースは早期アクセス期間中はクローズドです。
+リポジトリ内のドキュメント、サンプル、設定はMIT。ブランドアセット (`assets/`) はMITではなく、[`assets/README.md`](assets/README.md) を参照。MCPサーバー本体は `mcp.shinobidata.com` でホストされており、プロダクションコードベースはアルファ期間中はクローズドです。
