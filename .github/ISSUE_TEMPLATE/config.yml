@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Question or general discussion
+    url: https://github.com/niyamvora/shinobidata/discussions/categories/q-a
+    about: For installation help, "is this a bug or expected", or "how do I do X" — Discussions stays searchable and lets others learn from your thread.
+  - name: 💡 Tool / feature idea
+    url: https://github.com/niyamvora/shinobidata/discussions/categories/ideas
+    about: Discuss the shape of a new tool before filing an issue. Most tools that ship come from real questions someone tried to ask Claude/ChatGPT and couldn't.
+  - name: 📧 Security / private contact
+    url: https://github.com/niyamvora/shinobidata/blob/main/SECURITY.md
+    about: For anything sensitive — email support@shinobidata.com instead of a public issue.

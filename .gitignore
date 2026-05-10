@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# OS
+Thumbs.db
+
+# Local agent / claude config
+.agent/
+.agents/
+.codex/
+.cursor/
+.gemini/
+.claude/
