@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "shinobidata",
+  "version": "1.0.0",
+  "description": "Portfolio analytics and US-equity market research for Claude Code. 32 OAuth-protected tools spanning portfolio CRUD, performance, fundamentals, sectors, screening, and news.",
+  "author": {
+    "name": "ShinobiData",
+    "email": "support@shinobidata.com",
+    "url": "https://shinobidata.com"
+  },
+  "homepage": "https://shinobidata.com/mcp",
+  "repository": "https://github.com/niyamvora/shinobidata",
+  "license": "MIT",
+  "keywords": [
+    "finance",
+    "portfolio",
+    "stocks",
+    "equities",
+    "research",
+    "analytics",
+    "market-data",
+    "mcp",
+    "oauth"
+  ]
+}

@@ -10,6 +10,7 @@ Hook your AI client up to a real portfolio analyst. 32 tools for portfolio track
 Works with Claude Desktop, ChatGPT (Plus / Teams / Enterprise), and any other MCP client.
 
 [![MCP Registry](https://img.shields.io/badge/MCP_Registry-com.shinobidata%2Fresearch-blue)](https://registry.modelcontextprotocol.io/?search=shinobidata)
+[![Claude Code Plugin](https://img.shields.io/badge/Claude_Code-shinobidata%40shinobidata-orange)](https://code.claude.com/docs/en/discover-plugins)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Discussions](https://img.shields.io/badge/discussions-open-purple)](https://github.com/niyamvora/shinobidata/discussions)
 
@@ -31,6 +32,17 @@ The AI does the orchestration. You ask the question.
 Each question turns into 1 to 4 tool calls. The AI narrates. The data is real and cited.
 
 ## Install
+
+### Claude Code
+
+```shell
+/plugin marketplace add niyamvora/shinobidata
+/plugin install shinobidata@shinobidata
+```
+
+That's the whole install. The first tool call opens an OAuth consent screen. Sign in with Google, click Allow, you're done. Run `/reload-plugins` to activate without restarting.
+
+Plugin source lives in [`plugins/shinobidata/`](plugins/shinobidata/).
 
 ### Claude Desktop
 

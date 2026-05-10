@@ -1,0 +1,6 @@
+{
+  "shinobidata": {
+    "type": "http",
+    "url": "https://mcp.shinobidata.com/api/mcp/mcp"
+  }
+}
