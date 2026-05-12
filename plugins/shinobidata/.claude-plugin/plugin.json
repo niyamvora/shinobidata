@@ -1,6 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "shinobidata",
+  "displayName": "ShinobiData",
   "version": "1.0.0",
   "description": "Portfolio analytics and US-equity market research for Claude Code. 32 OAuth-protected tools spanning portfolio CRUD, performance, fundamentals, sectors, screening, and news.",
   "author": {
