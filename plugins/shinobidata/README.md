@@ -7,7 +7,7 @@ Portfolio analytics and US-equity market research, in Claude Code. Backed by the
 From within Claude Code:
 
 ```shell
-/plugin marketplace add niyamvora/shinobidata
+/plugin marketplace add dark-horse-stocks/shinobidata
 /plugin install shinobidata@shinobidata
 ```
 

@@ -6,8 +6,8 @@ Thanks for being here. This repo is the public docs / examples / assets surface 
 
 | Type | What helps | Where |
 |---|---|---|
-| Bug reports | OAuth that doesn't work, a tool returning wrong data, consent screen issues | [Bug template](https://github.com/niyamvora/shinobidata/issues/new?template=bug.yml) |
-| Tool requests | "I'd love a tool that does X" | Discuss first in [Discussions → Ideas](https://github.com/niyamvora/shinobidata/discussions/categories/ideas), then file once the shape is clear |
+| Bug reports | OAuth that doesn't work, a tool returning wrong data, consent screen issues | [Bug template](https://github.com/dark-horse-stocks/shinobidata/issues/new?template=bug.yml) |
+| Tool requests | "I'd love a tool that does X" | Discuss first in [Discussions → Ideas](https://github.com/dark-horse-stocks/shinobidata/discussions/categories/ideas), then file once the shape is clear |
 | Doc fixes | Typos, unclear instructions, missing screenshot, broken link | PR direct |
 | Translations | `README.{ja,ko,vi}.md` and other localized docs | PR direct, see notes below |
 | Examples | New prompt patterns for `examples/prompts.md`, sample integrations | PR direct |
@@ -16,12 +16,12 @@ Thanks for being here. This repo is the public docs / examples / assets surface 
 
 ## What's out of scope
 
-- Code changes to the MCP server. The server source isn't here. If you've found a tool-level bug or want to propose a behavior change, [Discussions → Q&A](https://github.com/niyamvora/shinobidata/discussions/categories/q-a) or <support@shinobidata.com>.
+- Code changes to the MCP server. The server source isn't here. If you've found a tool-level bug or want to propose a behavior change, [Discussions → Q&A](https://github.com/dark-horse-stocks/shinobidata/discussions/categories/q-a) or <support@shinobidata.com>.
 - Production credentials, internal infra details, anything beyond what's already public on `mcp.shinobidata.com`'s well-known endpoints.
 
 ## Filing a good bug report
 
-The [bug template](https://github.com/niyamvora/shinobidata/issues/new?template=bug.yml) asks for the fields we actually use:
+The [bug template](https://github.com/dark-horse-stocks/shinobidata/issues/new?template=bug.yml) asks for the fields we actually use:
 
 - AI client + version (Claude Desktop x.y.z, ChatGPT Plus, etc.).
 - Tool you called + the prompt.
@@ -30,7 +30,7 @@ The [bug template](https://github.com/niyamvora/shinobidata/issues/new?template=
 
 ## Filing a good tool request
 
-The [tool request template](https://github.com/niyamvora/shinobidata/issues/new?template=tool-request.yml) asks for:
+The [tool request template](https://github.com/dark-horse-stocks/shinobidata/issues/new?template=tool-request.yml) asks for:
 
 - The user-facing question the AI should be able to answer. Phrase it as a question, not a tool name.
 - What data sources it would need. Rough is fine ("earnings revisions over time").

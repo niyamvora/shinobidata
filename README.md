@@ -12,7 +12,7 @@ Works with Claude Desktop, ChatGPT (Plus / Teams / Enterprise), and any other MC
 [![MCP Registry](https://img.shields.io/badge/MCP_Registry-com.shinobidata%2Fresearch-blue)](https://registry.modelcontextprotocol.io/?search=shinobidata)
 [![Claude Code Plugin](https://img.shields.io/badge/Claude_Code-shinobidata%40shinobidata-orange)](https://code.claude.com/docs/en/discover-plugins)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
-[![Discussions](https://img.shields.io/badge/discussions-open-purple)](https://github.com/niyamvora/shinobidata/discussions)
+[![Discussions](https://img.shields.io/badge/discussions-open-purple)](https://github.com/dark-horse-stocks/shinobidata/discussions)
 
 [English](README.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Tiếng Việt](README.vi.md)
 
@@ -36,7 +36,7 @@ Each question turns into 1 to 4 tool calls. The AI narrates. The data is real an
 ### Claude Code
 
 ```shell
-/plugin marketplace add niyamvora/shinobidata
+/plugin marketplace add dark-horse-stocks/shinobidata
 /plugin install shinobidata@shinobidata
 ```
 
@@ -172,7 +172,7 @@ Down the line:
 - Hosted `web_search` that fans out to Claude / Gemini / Perplexity
 - Bigger portfolio caps for power users
 
-[Issues](https://github.com/niyamvora/shinobidata/issues) for bugs and tracked features. [Discussions](https://github.com/niyamvora/shinobidata/discussions) for ideas.
+[Issues](https://github.com/dark-horse-stocks/shinobidata/issues) for bugs and tracked features. [Discussions](https://github.com/dark-horse-stocks/shinobidata/discussions) for ideas.
 
 ## Privacy and security
 
@@ -188,11 +188,11 @@ Long version: <https://shinobidata.com/en/legal/privacy-policy> · <https://shin
 
 ## Help / contributing
 
-Bug? [Bug template](https://github.com/niyamvora/shinobidata/issues/new?template=bug.yml).
+Bug? [Bug template](https://github.com/dark-horse-stocks/shinobidata/issues/new?template=bug.yml).
 
-Want a tool that doesn't exist yet? Start in [Discussions → Ideas](https://github.com/niyamvora/shinobidata/discussions/categories/ideas). Most tools that ship come from a real question someone tried to ask Claude or ChatGPT and couldn't.
+Want a tool that doesn't exist yet? Start in [Discussions → Ideas](https://github.com/dark-horse-stocks/shinobidata/discussions/categories/ideas). Most tools that ship come from a real question someone tried to ask Claude or ChatGPT and couldn't.
 
-Stuck installing? [Discussions → Q&A](https://github.com/niyamvora/shinobidata/discussions/categories/q-a) or email <support@shinobidata.com>.
+Stuck installing? [Discussions → Q&A](https://github.com/dark-horse-stocks/shinobidata/discussions/categories/q-a) or email <support@shinobidata.com>.
 
 Translations and doc fixes are very welcome. The bar is "useful for a real reader", not perfect. See [CONTRIBUTING.md](CONTRIBUTING.md).
 

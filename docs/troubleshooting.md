@@ -2,7 +2,7 @@
 
 The usual gotchas, roughly in order of how often they come up.
 
-If yours isn't here, search [Discussions → Q&A](https://github.com/niyamvora/shinobidata/discussions/categories/q-a) or file a [bug](https://github.com/niyamvora/shinobidata/issues/new?template=bug.yml).
+If yours isn't here, search [Discussions → Q&A](https://github.com/dark-horse-stocks/shinobidata/discussions/categories/q-a) or file a [bug](https://github.com/dark-horse-stocks/shinobidata/issues/new?template=bug.yml).
 
 ## OAuth
 
@@ -47,7 +47,7 @@ If you've quit-and-reopened and still see nothing:
 
 ### Tools list, but every call hits a rate limit
 
-You're hitting the per-token rate limit. Default is generous; if you're consistently hitting it, you may have a tool loop (the AI calling the same tool over and over). File a [bug](https://github.com/niyamvora/shinobidata/issues/new?template=bug.yml) and we'll dig in.
+You're hitting the per-token rate limit. Default is generous; if you're consistently hitting it, you may have a tool loop (the AI calling the same tool over and over). File a [bug](https://github.com/dark-horse-stocks/shinobidata/issues/new?template=bug.yml) and we'll dig in.
 
 Limits also reset after a short window. Wait a minute and retry.
 
@@ -119,4 +119,4 @@ rm -rf ~/.mcp-auth/
 # Re-authorize
 ```
 
-90% of intermittent issues clear after this. If yours doesn't, [file a bug](https://github.com/niyamvora/shinobidata/issues/new?template=bug.yml) with what you tried, your client + version, and any logs you can grab.
+90% of intermittent issues clear after this. If yours doesn't, [file a bug](https://github.com/dark-horse-stocks/shinobidata/issues/new?template=bug.yml) with what you tried, your client + version, and any logs you can grab.

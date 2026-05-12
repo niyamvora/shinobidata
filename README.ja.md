@@ -89,9 +89,9 @@ Streamable HTTP、OAuth 2.1 with PKCE。`https://mcp.shinobidata.com/api/mcp/mcp
 
 ## ヘルプ・コントリビュート
 
-バグ: [バグレポート](https://github.com/niyamvora/shinobidata/issues/new?template=bug.yml)
-ツールアイデア: [Discussions → Ideas](https://github.com/niyamvora/shinobidata/discussions/categories/ideas)
-質問: [Discussions → Q&A](https://github.com/niyamvora/shinobidata/discussions/categories/q-a) または <support@shinobidata.com>
+バグ: [バグレポート](https://github.com/dark-horse-stocks/shinobidata/issues/new?template=bug.yml)
+ツールアイデア: [Discussions → Ideas](https://github.com/dark-horse-stocks/shinobidata/discussions/categories/ideas)
+質問: [Discussions → Q&A](https://github.com/dark-horse-stocks/shinobidata/discussions/categories/q-a) または <support@shinobidata.com>
 
 翻訳・ドキュメント修正歓迎。詳細は [CONTRIBUTING.md](CONTRIBUTING.md) (英語)。
 

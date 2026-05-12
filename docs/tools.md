@@ -91,4 +91,4 @@ Things we know we want but cut from v1 to ship faster:
 - `get_dividend_summary` strict held-on-ex-date math — v1 uses `current_quantity × Σ(amount over 365d)`, which is what Robinhood and Fidelity show. The strict version walks the per-symbol transaction history.
 - `web_search` multi-backend tool — fan out to Claude internal web search, Google Gemini grounded search, Perplexity online. Sibling to `search_companies`. Planned for v2.
 
-[Open a tool request](https://github.com/niyamvora/shinobidata/issues/new?template=tool-request.yml) for anything else you want.
+[Open a tool request](https://github.com/dark-horse-stocks/shinobidata/issues/new?template=tool-request.yml) for anything else you want.

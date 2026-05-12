@@ -7,7 +7,7 @@ body:
       value: |
         Thanks for reporting. The fields below are what we actually use to reproduce. Fill in what you can.
 
-        For install / "how do I" questions, use [Discussions → Q&A](https://github.com/niyamvora/shinobidata/discussions/categories/q-a).
+        For install / "how do I" questions, use [Discussions → Q&A](https://github.com/dark-horse-stocks/shinobidata/discussions/categories/q-a).
 
   - type: dropdown
     id: client
@@ -78,7 +78,7 @@ body:
     attributes:
       label: Confirm
       options:
-        - label: Searched [Issues](https://github.com/niyamvora/shinobidata/issues?q=is%3Aissue) and [Discussions](https://github.com/niyamvora/shinobidata/discussions); not a duplicate.
+        - label: Searched [Issues](https://github.com/dark-horse-stocks/shinobidata/issues?q=is%3Aissue) and [Discussions](https://github.com/dark-horse-stocks/shinobidata/discussions); not a duplicate.
           required: true
         - label: Redacted any secrets (OAuth tokens, API keys) from the fields above.
           required: true

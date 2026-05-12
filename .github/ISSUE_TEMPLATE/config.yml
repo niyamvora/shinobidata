@@ -1,11 +1,11 @@
 blank_issues_enabled: false
 contact_links:
   - name: 💬 Question or general discussion
-    url: https://github.com/niyamvora/shinobidata/discussions/categories/q-a
+    url: https://github.com/dark-horse-stocks/shinobidata/discussions/categories/q-a
     about: Installation help, "is this a bug or expected", "how do I X". Discussions stay searchable and others learn from your thread.
   - name: 💡 Tool or feature idea
-    url: https://github.com/niyamvora/shinobidata/discussions/categories/ideas
+    url: https://github.com/dark-horse-stocks/shinobidata/discussions/categories/ideas
     about: Talk through a new tool before filing. Most tools that ship come from a real question someone couldn't get an answer to.
   - name: 📧 Security or anything sensitive
-    url: https://github.com/niyamvora/shinobidata/blob/main/SECURITY.md
+    url: https://github.com/dark-horse-stocks/shinobidata/blob/main/SECURITY.md
     about: Email support@shinobidata.com, please don't open a public issue.

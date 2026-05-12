@@ -93,4 +93,4 @@ Grant only what you want.
 
 ## When something doesn't work
 
-See [troubleshooting.md](troubleshooting.md). If your specific issue isn't there, file a [bug](https://github.com/niyamvora/shinobidata/issues/new?template=bug.yml) or post in [Discussions → Q&A](https://github.com/niyamvora/shinobidata/discussions/categories/q-a).
+See [troubleshooting.md](troubleshooting.md). If your specific issue isn't there, file a [bug](https://github.com/dark-horse-stocks/shinobidata/issues/new?template=bug.yml) or post in [Discussions → Q&A](https://github.com/dark-horse-stocks/shinobidata/discussions/categories/q-a).

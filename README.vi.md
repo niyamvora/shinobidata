@@ -89,9 +89,9 @@ Catalog đầy đủ: [docs/tools.md](docs/tools.md) (tiếng Anh).
 
 ## Trợ giúp / Đóng góp
 
-Lỗi: [Bug template](https://github.com/niyamvora/shinobidata/issues/new?template=bug.yml)
-Ý tưởng công cụ: [Discussions → Ideas](https://github.com/niyamvora/shinobidata/discussions/categories/ideas)
-Câu hỏi: [Discussions → Q&A](https://github.com/niyamvora/shinobidata/discussions/categories/q-a) hoặc <support@shinobidata.com>
+Lỗi: [Bug template](https://github.com/dark-horse-stocks/shinobidata/issues/new?template=bug.yml)
+Ý tưởng công cụ: [Discussions → Ideas](https://github.com/dark-horse-stocks/shinobidata/discussions/categories/ideas)
+Câu hỏi: [Discussions → Q&A](https://github.com/dark-horse-stocks/shinobidata/discussions/categories/q-a) hoặc <support@shinobidata.com>
 
 Hoan nghênh dịch thuật và sửa tài liệu. Chi tiết: [CONTRIBUTING.md](CONTRIBUTING.md) (tiếng Anh).
 

@@ -7,7 +7,7 @@ body:
       value: |
         Most tools that ship come from a real question someone tried to ask Claude or ChatGPT and couldn't answer. Tell us the question first; we'll figure out the tool together.
 
-        For early-stage discussion, [Discussions → Ideas](https://github.com/niyamvora/shinobidata/discussions/categories/ideas).
+        For early-stage discussion, [Discussions → Ideas](https://github.com/dark-horse-stocks/shinobidata/discussions/categories/ideas).
 
   - type: textarea
     id: question
