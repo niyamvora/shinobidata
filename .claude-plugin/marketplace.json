@@ -10,9 +10,7 @@
   "plugins": [
     {
       "name": "shinobidata",
-      "displayName": "ShinobiData",
       "source": "./plugins/shinobidata",
-      "icon": "./assets/logo-512.png",
       "description": "Turn Claude Code into a portfolio analyst. 32 OAuth-protected tools for portfolio tracking, performance vs benchmarks, fundamentals, sectors, screening, and news.",
       "version": "1.0.0",
       "author": {
